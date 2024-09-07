@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шпион</title>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .fade-out {
+            animation: fadeOut 0.5s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="alert_max" class="hidden fixed top-4 right-4 p-4 text-white bg-gray-800 border-2 border-red-500 rounded shadow-lg" role="alert">
+        Игроков не может быть больше 16-ти
+    </div>
+    <div id="alert_min" class="hidden fixed top-4 right-4 p-4 text-white bg-gray-800 border-2 border-red-500 rounded shadow-lg" role="alert">
+        Игроков не может быть меньше 3-х
+    </div>
+    <div id="alert_none" class="hidden fixed top-4 right-4 p-4 text-white bg-gray-800 border-2 border-red-500 rounded shadow-lg" role="alert">
+        Введите количество игроков
+    </div>
+    <div class="-z-50 absolute h-full w-full bg-gradient-to-br from-red-950 to-black"></div>
+    <div class="flex flex-col items-center justify-center h-screen pb-96"><img src="spy.png" class="max-w-full h-auto size-44">
+        <img src="text_spy.png" class="max-w-full h-auto size-44">
+        <input id="count_player" type="number" min="4" max="16" class="transition-all duration-500 bg-gradient-to-tl to-black via-black from-red-900 bg-size-200 bg-pos-0 focus:bg-pos-100 form-control outline-none border-none size-16 w-96 rounded-lg opacity-90 focus:shadow-white font-semibold focus:shadow-md text-white text-3xl input-number" placeholder="Количество игроков...">
+        <button id = "start_button" onclick="goToPage()" class="transition-all duration-500 bg-gradient-to-tl to-black via-black from-red-900 bg-size-200 bg-pos-0 hover:bg-pos-100 mt-10 rounded-2xl border-2 border-dashed border-white w-72 bg-black px-6 py-3 font-semibold uppercase text-white hover:translate-x-[-4px] hover:translate-y-[-4px] hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:rounded-2xl active:shadow-none">
+            Начать игру
+          </button>
+        <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+        <script>
+        $('body').on('input', '.input-number', function(){
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+        </script>
+    </div>
+</body>
+</html>

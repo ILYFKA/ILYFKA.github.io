@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шпион</title>
+    <script src="script.js" defer></script>
+    <script>
+        window.onload = function() {
+            const labelText = localStorage.getItem("labelText"); // Получаем значение из localStorage
+            if (labelText) {
+                document.getElementById("game_label").innerText = labelText; // Устанавливаем текст в label
+            }
+        }
+    </script>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="-z-50 absolute h-full w-full bg-gradient-to-br from-red-950 to-black"></div>
+    <label id="game_label" class="font-semibold text-9xl text-white">1 игрок</label>
+    <script>
+        window.addEventListener('load', function() {runLoop()});
+    </script>
+</body>
+</html>

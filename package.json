@@ -1,0 +1,15 @@
+{
+  "name": "site_spy",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx tailwindcss -i ./style.css -o ./src/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
